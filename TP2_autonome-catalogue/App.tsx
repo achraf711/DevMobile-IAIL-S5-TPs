@@ -2,7 +2,6 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
-  // Données
   const produits = [
     { id: 1, nom: 'Clavier', categorie: 'Accessoires', prix: 120, stock: 5 },
     { id: 2, nom: 'Souris', categorie: 'Accessoires', prix: 80, stock: 8 },
@@ -10,11 +9,9 @@ export default function App() {
     { id: 4, nom: 'Casque', categorie: 'Accessoires', prix: 240, stock: 3 }
   ];
 
-  // Logique métier intégrée
   const produitsDisponibles = produits.filter(p => p.stock > 0);
   const valeurStock = produits.reduce((total, p) => total + (p.prix * p.stock), 0);
 
-  // Interface utilisateur
   return (
     <View style={styles.container}>
       <Text style={styles.title}>CampusStock</Text>
@@ -35,7 +32,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F2F7FD', // Repris du TP1 pour cohérence
+    backgroundColor: '#F2F7FD', 
     alignItems: 'center',
     justifyContent: 'center',
     padding: 20,
